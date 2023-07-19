@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Curtis Store | {{{title}}}</title>
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/order.css">
+  <link rel="stylesheet" href="/animation.css">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/cart.css">
+  <link rel="stylesheet" href="/about-me.css">
+  <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/product.css">
+</head>
+
+
+<body>
+  <!-- Top Nav Bar -->
+  <nav class="top-nav navbar navbar-expand-lg  navbar-dark" style="z-index: 1000" id="navbar">
+    <a><img style="object-fit:cover" height="70px" width="200px" src="/assets/logo.jpg"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class=" collapse navbar-collapse" data-toggle="collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Trang chủ</a>
+        </li>
+
+        <li class="nav-item dropdown"  >
+          <a class="nav-link"id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
+          
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/product" style="z-index: 1000">Tất cả</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/product/sneaker">Giày thể thao</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/product/sandal">Dép</a>
+          </div>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Liên hệ</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav "> 
+        <li class="nav-item dropdown ">
+          <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-shopping-cart "></i>
+          </a>
+
+          <div class="dropdown-cart dropdown-menu dropdown-menu-right p-4" aria-labelledby="navbarDropdownMenuLink">
+              <table>
+              <tr>
+                <th></th>
+                <th>Tên sản phẩm</th>
+                <th style="width: 70px;">SL</th>
+                <th>Giá</th>
+                <th></th>
+              </tr>
+            {{#each cart}}
+              <tr>
+                <td><img width="50px" src="/photo/{{image}}" alt=""></td>
+                <td>{{name}}(size {{size}})</td>
+                <td>{{quantity}}</td>
+                <td class="money">{{price}}</td>
+                <td>
+                  <form method="POST" action="/cart/remove/{{id}}/{{size}}">
+                    <button class="btn btn-danger" type="submit">X</button>
+                  </form>
+                </td>
+              </tr>
+            {{/each}}
+            </table>
+
+            <a class="dropdown-item" href="/cart"><i class="fas fa-sign-out-alt"></i> Xem giỏ hàng</a>
+          </div>
+
+        </li>
+      </ul>
+
+      {{!-- <ul class="navbar-nav"> 
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/user"><i class="fas fa-id-card"></i> Thông tin tài khoản</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+          </div>
+        </li>
+      </ul> --}}
+    </div>
+  </nav>
+
+<div class="container-fluid" style="padding:0">
+  {{#if success}}
+  <div class="alert alert-success" role="alert" id="success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Hoàn thành! </strong>{{success}}
+  </div>
+  {{/if}}
+{{!-- 
+  <div class="alert alert-danger" role="alert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Thất bại!</strong>{{success}}
+  </div> --}}
+    {{{body}}}
+</div>
+
+  <!-- Bottom Nav Bar -->
+  <nav class="bot-nav navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse">
+      <nav class="nav flex-column mr-auto">
+        <a href="/"><img style="object-fit:cover" height="70px" width="200px" src="/assets/logo.jpg" ></a>
+        <div style="padding-left: 12px;">
+          <h4>Curtis Store</h4>
+          <p><i class="fa fa-phone" aria-hidden="true"></i> <strong>Hotline:</strong> 06868686868</p>
+          <h6>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> CurtisStore </h6>
+        </div>
+      </nav>
+      <nav class="nav flex-column col-sm-3">
+        <h4>Liên kết nhanh</h4>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product">Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </nav>
+    </div>
+  </nav>
+    
+</body>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  {{!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> --}}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  {{!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
+  {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  --}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script src="/main.js"></script>
+
+</html>

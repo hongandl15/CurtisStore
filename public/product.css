@@ -1,0 +1,140 @@
+.product-img{
+    margin: 50px; 
+    box-shadow: 1px 1px 1px 1px rgb(153, 155, 155);
+    width: 700px;
+    object-fit: contain;
+}
+  
+.product-img:hover{
+opacity: 0.8;
+}
+
+.product-detail{
+    margin: 10px;
+    width: 35%;
+}
+
+.product-detail .product-name{
+    font-size: 50px;
+    font-weight:bolder
+}
+
+.product-detail .product-quantity{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.product-detail .product-price{
+font-size: 60px;
+color: rgb(241, 57, 57);
+}
+
+.product-detail .product-size{
+  margin-right: 10px;
+  margin-left: 0;
+  font-size: 20px;
+  color: rgb(247, 189, 29);
+}
+  
+  
+  .product-detail input[type='number']{
+    width: 80px;
+  } 
+  
+  .product-detail .product-services div{
+    font-size: 40px;
+  }
+  
+  .product-detail .product-services li{
+    font-size: 20px;
+    color: #1b2644;
+  }
+
+  .size-select{
+    height: 30px;
+  }
+
+  .product-info .order-btn{
+    width: 100%;
+    background-color: #212934;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .product-img{
+        width: 350px;
+    }
+    .product-detail{
+        margin: 10px;
+        width: 100%;
+    }
+      
+
+    .product-detail .product-name{
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+    .product-detail .product-price{
+        font-size: 40px;
+        color: rgb(241, 57, 57);
+    }
+
+    .product-detail .product-size{
+        font-size: 30px;
+    }
+          
+    .product-detail .product-quantity{
+        font-size: 20px;
+        width: 200px;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        color: black;
+    }
+}
+
+      @media only screen and (max-width: 480px) {
+    .product-img{
+        width: 350px;
+    }
+    .product-detail{
+        margin: 10px;
+        width: 100%;
+    }
+      
+
+    .product-detail .product-name{
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+    .product-detail .product-price{
+        font-size: 40px;
+        color: rgb(241, 57, 57);
+    }
+
+    .product-detail .product-size{
+        font-size: 30px;
+    }
+          
+    .product-detail .product-quantity{
+        font-size: 20px;
+        width: 200px;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        color: black;
+    }
+
+  }
+
+

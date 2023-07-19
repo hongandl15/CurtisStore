@@ -1,0 +1,109 @@
+
+
+.action-responsive{
+    display: none;
+}
+
+.order-form{
+    width: 50%;
+    margin-left: 50px;
+}
+  
+.order-form .form-control{
+width: 100%;
+}
+
+.btn-order{
+    margin: auto;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .table{
+        width: 500px;
+    }
+    
+    .table img{
+        width: 80px;
+    }
+
+    .table th{
+        font-size: 13px;
+    }
+
+    .table td{
+        font-size: 13px;
+    }
+    .table input{
+        width: 50px;
+    }
+    .table .unitprice{
+        display: none;
+    }
+
+    .cart{
+        width: 480px;
+    }
+
+    .order-form{
+        width: 90%;
+    }
+
+    .action{
+        display: none;
+    }
+
+    .action-responsive{
+        display: block;
+    }
+
+    .btn-order{
+        margin: auto;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .table{
+        width: 500px;
+    }
+
+    .table img{
+        width: 50px;
+    }
+
+    .table th{
+        font-size: 11px;
+    }
+
+    .table td{
+        font-size: 11px;
+    }
+    .table input{
+        width: 50px;
+    }
+    .table .unitprice{
+        display: none;
+    }
+
+    .cart{
+        width: 480px;
+    }
+
+    .order-form{
+        width: 90%;
+    }
+
+    .action{
+        display: none;
+    }
+
+    .action-responsive{
+        display: block;
+    }
+}
+
+

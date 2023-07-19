@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center p-5">
+    <div class="mt-4 w-25 mr-4">
+        <h1 style="margin-left: 40px;"> <img src="/assets/user.png"></img>Thêm sản phẩm</h1>
+
+        <form role="form" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="name">Tên sản phẩm</label>
+                <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="name" name="name" required>
+            </div>
+            <div class="form-group d-flex">
+                <label style="width:200px;line-height:35px" for="price">Giá gốc</label>
+                <input class="form-control" type="text" placeholder="Nhập giá" id="price" name="price" required>
+                <label style="width:200px;line-height:35px; margin-left:10px" for="saleprice">Giá sale</label>
+                <input class="form-control" type="text" placeholder="Giá sale" id="saleprice" name="saleprice" required>
+            </div>
+
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input class="form-control" type="text" placeholder="Model" id="model" name="model" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Số lượng</label>
+                <input class="form-control" type="text" placeholder="Số lượng" id="quantity" name="quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="photofront">Ảnh</label>
+                <input type="file" class="form-control pb-5" accept="image/*" id="photofront" name="photofront">
+            </div>
+            {{#if err}}
+            <div class="alert alert-danger">
+                {{err}}
+            </div>
+            {{/if}}
+            <div class="form-group">
+                <button style="background-color:#58E1FF; border:none; border-radius:10px" class="btn btn-success w-100"
+                    type="submit">Thêm sản phẩm</button>
+            </div>
+        </form>
+
+        <a href="/">Quay lại</a>
+    </div>
+        <div class="table-responsive m-auto" style="overflow: scroll; height:1000px">
+            <table class="table table-striped border">
+                <thead class="">
+                    <tr>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Giá sale</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">brand</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col">Thời gian tạo</th>
+                        <th scope="col">Thời gian cập nhật</th>
+                        <th scope="col">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        <td><img width="100px" height="100px" src="/photo/{{image.photo1}}" alt={{image.photo1}}></td>
+                        <td><a href="/product/{{id}}">{{id}}</a></td>
+                        <td>{{name}}</td>
+                        <td class="money">{{price}}</td>
+                        <td>{{saleprice}}</td>
+                        <td>{{model}}</td>
+                        <td>{{brand}}</td>
+                        <td>{{quantity}}</td>
+                        <td>{{status}}</td>
+                        <td>{{create_at}}</td>
+                        <td>{{update_at}}</td>
+                        <td style="display: flex;">
+                            <button style="margin: 10px; padding:5px; background-color:rgb(240, 240, 106)">Sửa</button>
+                            <a href="/admin/remove/{{id}}"> <button style="margin: 10px; padding:5px; background-color:rgb(252, 90, 90)"> Xóa</button> </a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    {{#if success}}
+    <div class="alert alert-success">
+        <strong>{{success}}!</strong>
+    </div>
+    {{/if}}
+</div>

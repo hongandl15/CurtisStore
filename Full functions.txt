@@ -1,0 +1,52 @@
+(150k x 9 chức năng ~  1350k)
+Chức năng cơ bản (Chừng này là đủ để chạy web trong lúc sản phẩm còn ít)
+- Trang chủ - About - contact
+- Trang sản phẩm theo thể loại
+- Trang chi tiết sản phẩm
+- Giỏ hàng
+- Đặt hàng
+- Trang admin
+- Danh sách đơn hàng - cho admin
+- Danh sách sản phẩm + thêm sản phẩm - cho admin quản lí
+- Phiên bản cho mobile (Hiện tại đang ở đây)
+
+Cần chạy thử khoảng 1 tuần để kiểm tra coi có vấn đề gì không (cần người vô test hàng ngày)
+
+(200k x 5 chức năng ~ 1000k)
+Chức năng nâng cao hơn xíu (Phát triển song song khi đang duy trì web, cần thiết khi số lượng sản phẩm nhiều hơn)
+- Lọc sản phẩm (Theo thể loại, thương hiệu, giá)
+- Tìm kiếm sản phẩm (Theo từ khóa)
+- Sắp xếp sản phẩm theo giá
+- Nhắn tin qua page facebook
+- Quản lí voucher
+
+(250k x 5 chức năng ~ 1250k)
+Chức năng vip pro (Sau khi web ổn định 1 tháng)
+- Đăng kí, đăng nhập
+- Gửi email tự động
+- Thêm vào danh sách yêu thích
+- Lịch sử mua hàng
+- Bình luận, đánh giá
+
+(500k x 3 chức năng ~ 1500k)
+Chức năng siêu vip pro()  
+Thanh toán trên web
+- Tích hợp AI cho các chức năng tự động
+- Tích hợp tool buff like, comment cho fb page (Cần phí duy trì hàng tháng)
+
+Chức năng vip nhất
+- Ân đứng sau quản lí, bảo hành trọn đời 
+....
+
+Bắt đầu tính từ 1/8 - 31/12
+- Nếu lợi nhuận < tiền công làm web (~ 5tr) -> Trả full tiền web cho Ân + Nếu muốn tiếp tục support (20% lợi nhuận/ tháng)
+Hoặc trả trước 50% = 2tr5 để tiếp tục support (lúc này phí support 250k/tháng), sau 4 tháng trả tiếp 50% còn lại
+VD:
+	2500k + 2500 + 250k x 4 = 6000k (trong vòng 9 tháng)
+
+- Nếu lợi nhuận > tiền công làm web -> Ân lấy 50% lợi nhuận tại 31/12 + tiếp tục support technical  + thêm các chức năng mới free (20% lợi nhuận trong thời gian 1 năm)
+VD: 
+
+	3000k + 200k x 12 = 5400k (trong vòng 1 năm)
+			
+

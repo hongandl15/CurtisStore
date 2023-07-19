@@ -1,0 +1,64 @@
+ {{!-- <div class="d-flex flex-wrap justify-content-center" style="height:720px;background-color: #59AB6E;">
+
+</div> --}}
+
+ <div class="d-flex justify-content-left filter ">
+    <div class="sidebar">
+        <form action="">
+            <h3 class="font-weight-bold mt-2">Lọc sản phẩm</h3>
+                <a href="" class="font-weight-bold"><div>Giày</div></a>
+                <a href="" class="font-weight-bold"><div>Dép</div></a>
+            <hr>
+            <h5 class="mt-2 font-weight-bold">Thương hiệu</h5>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Nike" name="Nike" value="HTML" >
+                <label  class="form-check-label" for="Nike">Nike</label><br>
+            </div>  
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Vans" name="Vans" value="HTML" >
+                <label  class="form-check-label" for="Vans">Vans</label><br>
+            </div>  
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="Asics" name="Nike" value="HTML" >
+                <label  class="form-check-label" for="Asics">Asics</label><br>
+            </div>  
+
+            <hr>
+
+            <select class="form-control font-weight-bold" name="" id="">
+                <option value="0">Giá dưới 500.000</option>
+                <option value="500000"> 500.000 - 1.000.000</option>
+                <option value="1000000">Trên 1.000.000</option>
+            </select>
+            
+            <div style="margin-top: 15px;">
+                <button class="btn btn-primary"  type="submit">
+                    Lọc sản phẩm
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-left">
+        {{#each products}}
+            <a href="product/{{id}}" class="product-card"> 
+                <div class="row m-1">
+                    <div class="col">
+                            <img width="280px" height="280px" src="/photo/{{image.photo1}}" alt={{image.photo1}}>
+                        {{!-- <form method="POST" action="/cart/{{id}}"> --}}
+                            
+                                <div style="width:100%; text-align:left" >{{name}}</div>
+                                <div style="width:200px; color:red" class="money">{{price}}</div>
+                    
+                            {{!-- <input type="number" placeholder="1" value="1" name="quantity">
+                            <button type="submit">add to cart</button> --}}
+                        {{!-- </form> --}}
+                    </div>
+                </div>
+            </a>    
+
+        {{/each}}
+    </div>
+     
+</div>

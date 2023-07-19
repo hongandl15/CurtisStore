@@ -1,0 +1,54 @@
+<div id="body__container">
+    <div class="container-fluid mt-8">
+      <div class="card">
+        <div class="card-header">
+          <h2>Ví điện tử - admin</h2>
+        </div>
+        <h3 class="my-3 text-primary text-uppercase">Quản lý giao dịch</h3>
+        <p>Chọn một giao dịch để xem chi tiết</p>
+        <div class="table-responsive">
+          <table class="table table-striped border">
+            <thead class="table-light">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Tên khách hàng</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Ghi chú</th>
+                <th scope="col">Thời gian thực hiện</th>
+                <th scope="col">Tổng giá trị</th>
+                <th scope="col">Mặt hàng đặt</th>
+                {{!-- <th scope="col">Hành động</th> --}}
+                <th scope="col">Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each trans}}
+                <tr>
+                  <td><a href="/admin/transaction/{{id}}">{{id}}</a></td>
+                  <td>{{fullname}}</td>
+                  <td>{{address}}</td>
+                  <td>{{phone}}</td>
+                  <td>{{note}}</td>
+                  <td>{{date}}</td>
+                  <td>{{totalprice}}</td>
+                  <td style="display: flex;">
+                        {{#each product}}
+                        <div style="margin:10px">{{id}} </div>
+                        <div style="margin:10px">{{size}} </div>
+                        <div style="margin:10px">{{quantity}} </div>
+                        {{/each}}
+                  </td>
+                  <td style="display: flex;">
+                    <button style="margin: 10px;">Sửa</button> 
+                    <button style="margin: 10px;"> Xóa</button>
+                  </td>
+                  <td>Đang vận chuyển</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

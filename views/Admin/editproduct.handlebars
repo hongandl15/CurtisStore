@@ -1,0 +1,30 @@
+ <form role="form" method="post" action="/order">
+    <div class="form-group" >
+        <label for="name">Tên sản phẩm</label>
+        <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Giá</label>
+        <input class="form-control" type="phone" placeholder="Nhập giá" id="price" name="price" value="{{phone}}" required>
+    </div>
+    <div class="form-group">
+        <label for="brand">Email</label>
+        <input class="form-control" type="model" placeholder="Nhập model" id="model" name="email"  value="{{email}}"required>
+    </div>
+    <div class="form-group">
+        <label for="address">Địa chỉ</label>
+        <input class="form-control" type="String" placeholder="Địa chỉ" id="address" name="address" value="{{address}}" required>
+    </div>
+    <div class="form-group">
+        <label for="note">Ghi chú</label>
+        <input class="form-control" type="String" placeholder="Ghi chú" id="note" name="note" value="{{note}}" required>
+    </div>
+    <select class="form-select">
+        <option> Chọn loại giao hàng </option>
+        <option value="fast">Giao hàng nhanh</option>
+        <option value="standard">giao hàng tiêu chuẩn</option>
+    </select>
+    <div class="form-group">
+        <button style="background-color:#58E1FF; border:none; border-radius:10px" class="btn btn-success w-100" type="submit">Đặt hàng</button>
+    </div>
+</form>

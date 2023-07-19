@@ -1,0 +1,67 @@
+<div style="min-height: 650px;" class="m-3">
+    <div style="display: flex; margin-top: 20px">
+      <div style=" font-size: 50px; margin-top: 20px; display:inline-block">Đặt hàng thành công</div> 
+      <div style="line-height: 110px; margin:5px"><img width="40px" height="40px" src="https://static-00.iconduck.com/assets.00/success-icon-512x512-qdg1isa0.png" alt=""></div>
+    </div>
+    <h3 >Đơn hàng sẽ được vận chuyển trong thời gian sớm nhất</h3>
+
+
+  <div class="order-success">
+      <div class="order-product-info">
+        <table class="table table-striped" >
+          <tr>
+            <th></th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Size</th>
+            <th>Đơn giá</th>
+            <th>Tổng giá</th>
+          </tr>
+        {{#each order.product}}
+        <tr>
+          <td><img width="100px" src="/photo/{{image}}" alt=""></td>
+          <td>{{name}}</td>
+          <td> {{quantity}}</td>
+          <td>{{size}}</td>
+          <td class="money">{{price}}</td>
+          <td class="money">{{#multiple price quantity}} {{/multiple}} </td>
+        </tr>
+        {{/each}}
+        </table>
+        <div class="total-price"> Tổng: <span class="money"> {{order.totalprice}}</span></div>
+      </div>
+      <div class="order-customer-info" style="font-size: 30px;">
+        <table>
+          <tr>
+            <td >Mã đơn hàng</td>
+            <td><a href="#">{{order.id}}</a></td>
+          </tr>
+          <tr>
+            <td>Tên khách hàng:</td>
+            <td>{{order.fullname}}</td>
+          </tr>
+          <tr>
+            <td>Số điện thoại:</td>
+            <td>{{order.phone}}</td>
+          </tr>
+          <tr>
+            <td>Địa chỉ:</td>
+            <td>{{order.address}}</td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>{{order.email}}</td>
+          </tr>
+          <tr>
+            <td>Loại giao hàng:</td>
+            <td>{{order.delivery}}</td>
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <div style="margin: 20px; margin-top: 60px">
+
+    <a style="font-size: 30px; color: rgb(226, 122, 62); " href="/"> < Quay lại trang chủ</a>
+  </div>
+</div>

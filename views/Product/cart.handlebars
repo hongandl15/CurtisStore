@@ -1,0 +1,150 @@
+<script>
+  function getCart() {
+    const value = localStorage.getItem('cart');
+    console.log(value)
+    return value
+  }
+  var user = JSON.parse(localStorage.getItem('cart'));
+  console.log(user)
+  function getPrice(id, price) {
+    document.getElementById(id).innerHTML = `<div>` + quantity + `</div>`
+    return
+  }
+
+</script>
+
+<h1 class="mt-2">Giỏ hàng của bạn</h1>
+<table class="table table-dark cart">
+  <thead>
+    <tr>
+      <th scope="col">Ảnh</th>
+      <th scope="col">Tên mặt hàng</th>
+      <th scope="col">Size</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Tổng giá</th>
+      <th class="action" scope="col">Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cart}}
+    <tr>
+      <td><img width="100px" src="/photo/{{image}}" alt=""></td>
+      <td>{{name}}</td>
+      <td>{{size}}</td>
+      <td class="money">{{price}}</td>
+      <td>
+        {{!-- <input id="ProductQuantity{{id}}" type="number" value="{{quantity}}"> --}}
+        {{quantity}}
+      </td>
+      <td>
+        <div class="money">{{totalprice}}</div>
+        <form class="action-responsive" method="POST" action="/cart/remove/{{id}}/{{size}}">
+          <button type="submit">Remove</button>
+        </form>
+      </td>
+      <td class="action">
+        <form method="POST" action="/cart/remove/{{id}}/{{size}}">
+          <button type="submit">Remove</button>
+        </form>
+      </td>
+      {{/each}}
+
+  </tbody>
+</table>
+  {{#if cart}}
+  <form class="order-form m-auto" role="form" method="post" action="/order-success">
+    <h1>Thông tin vận chuyển</h1>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        {{!-- <label for="fullname">Họ tên</label> --}}
+        <input class="form-control" type="text" placeholder="Nhập tên người dùng" id="name" name="name"
+          value="{{fullname}}" required>
+      </div>
+      <div class="form-group col-md-6">
+        {{!-- <label for="phone">Số điện thoại</label> --}}
+        <input class="form-control" type="phone" placeholder="Nhập SĐT" id="phone" name="phone" value="{{phone}}"
+          required>
+      </div>
+    </div>
+    <div class="form-group">
+      {{!-- <label for="email">Email</label> --}}
+      <input class="form-control" type="email" placeholder="Nhập email" id="email" name="email" value="{{email}}"
+        required>
+    </div>
+
+    <div class="form-group row p-2">
+      <select class=" form-control col-md-4 mb-3 m-auto" id="city" aria-label=".form-select-sm" required>
+        <option value="" selected>Chọn tỉnh thành</option>
+      </select>
+
+      <select class="form-control col-md-4 mb-3 m-auto" id="district" aria-label=".form-select-sm" required>
+        <option value="" selected>Chọn quận huyện</option>
+      </select>
+
+      <select class="form-control col-md-3 m-auto " id="ward" aria-label=".form-select-sm" required>
+        <option value="" selected>Chọn phường xã</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="note">Ghi chú</label>
+      <textarea class="form-control" type="String" placeholder="Ghi chú" id="note" name="note" value="{{note}}"
+        required></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="voucher">Nhập mã voucher</label>
+        <input class="form-control" type="text" placeholder="a%X32bv" size="10" name="voucher">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="delivery">Chọn loại giao hàng</label>
+        <select class="form-control"  required="delivery">
+          <option value="fast">Giao hàng nhanh</option>
+          <option value="standard">Giao hàng tiêu chuẩn</option>
+        </select>
+      </div>
+    </div>
+
+    {{!-- <button style="background-color:#58E1FF; border:none; border-radius:10px" class="btn btn-success w-100"
+      type="submit">Đặt hàng</button> --}}
+
+  </form>
+      <div class="btn-order">
+        <button class="btn btn-success m-auto w-100" data-toggle="modal" data-target="#verificationModal">Đặt hàng</button>
+      </div>
+     {{/if}}
+
+
+
+<!-- Verification Modal -->
+<div class="modal fade" id="verificationModal" tabindex="-1" role="dialog" aria-labelledby="verificationModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="verificationModalLabel">Xác nhận đặt hàng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn có chắc chắn muốn đặt hàng?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        <button id="confirmOrderBtn" type="button" class="btn btn-success">Xác nhận đặt hàng</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript code to handle form submission after verification -->
+<script>
+  // Add event listener to the "Xác nhận đặt hàng" button
+  document.getElementById('confirmOrderBtn').addEventListener('click', function () {
+    // Submit the form
+    document.querySelector('.order-form').submit();
+  });
+</script>

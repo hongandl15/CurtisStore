@@ -1,0 +1,71 @@
+<script>
+    function addtocart(id){
+          let items = localStorage.getItem('cart');
+        // If there are no items in local storage, create an empty array
+        if (!items) {
+            items = [];
+        } else {
+        items = JSON.parse(items);
+        }
+        // Add a new item to the array
+        items.push(id);
+        localStorage.setItem('cart', JSON.stringify(items));
+        console.log("Thêm sản phẩm vào giỏ thành công" ); // Output: "value"
+        return true
+    }
+
+</script>
+
+<style>
+
+</style>
+
+    <video autoplay muted loop id="myVideo">
+        <source id="myVideo" src="../intro2.webm" type="video/mp4">
+    </video>
+
+    <h1 style="border: solid 0.5px rgb(226, 224, 224); text-align:center; padding: 10px">
+        <span>Sản phẩm Hot</span>
+    </h1>
+
+<div class="d-flex flex-wrap justify-content-center m-auto p-5">
+    {{#each products}}
+            <div class="col">
+                <figure class="snip0016">
+                    <img src="/photo/{{image.photo1}}" alt={{image.photo1}}/>
+
+                    <figcaption>
+                        <h2>Thời trang phong cách</h2>
+                        <p>Chinh phục mọi ánh nhìn.</p>
+                        <a href="product/{{id}}"></a>
+                    </figcaption>     
+                </figure>
+            <div class="product_name">{{name}}</div>
+            <div class="product_price money">{{price}}</div>
+            </div>
+    {{/each}}
+</div>
+
+
+<h1 style="border: solid 0.5px rgb(226, 224, 224); text-align:center; padding: 10px"><span>Sản phẩm Mới</span></h1>
+<div class="d-flex flex-wrap justify-content-center m-auto p-5">
+    {{#each products}}
+
+           <div class="col">
+                <figure class="snip0016">
+                    <img style="" src="/photo/{{image.photo1}}" alt={{image.photo1}}/>
+
+                    <figcaption>
+                        <h2>Thời trang phong cách</h2>
+                        <p>Chinh phục mọi ánh nhìn.</p>
+                        <a href="product/{{id}}"></a>
+                    </figcaption>     
+                </figure>
+            <div class="product_name">{{name}}</div>
+            <div class="product_price money">{{price}}</div>
+            </div>
+    {{/each}}
+</div>
+
+
+<script src="/main.js"></script>
