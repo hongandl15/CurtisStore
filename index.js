@@ -43,6 +43,7 @@ app.use(function(req, res, next) { // không hiển thị lại message session 
 });
 
 
+
 app.use('/', login)
 app.use('/', user)
 app.use('/', register)
@@ -50,10 +51,16 @@ app.use('/', admin)
 app.use('/', home)
 app.use('/', product)
 
+app.use((req, res, next) => {
+    res.status(404);
+    res.render('./Home/404', {layout:'main', title:'404 Not Found'});
+  });
+
 app.use(function (err, req, res, next) {
     console.error(err.stack)
-    res.status(404).render('404')
+    res.status(404).render('./Home/404', {layout:'main', title:'404 Not Found'})
   })
+
 
 app.listen(port, () => console.log(`Express started on https:/localhost:${port};`))
 

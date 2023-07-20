@@ -41,17 +41,6 @@ router.get('/admin/transactions', (req, res) => {
     }).sort({create_at: -1}).lean();
 })
 
-//xem danh sách sản phẩm
-router.get('/admin/products', (req, res) => {
-    Product.find(function(err, products){
-        if(products != null){ 
-            return res.render('./Admin/ListProductAdmin', {layout:'main',products: products, title:'admin'})
-        } 
-        else {  
-            return res.redirect('/')
-        };
-    }).lean();
-})
 
 router.get('/admin/addproduct', (req, res) => {
      let success = req.session.success

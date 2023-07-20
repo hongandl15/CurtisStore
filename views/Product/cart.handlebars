@@ -12,7 +12,7 @@
   }
 
 </script>
-
+  {{#if cart}}
 <h1 class="mt-2">Giỏ hàng của bạn</h1>
 <table class="table table-dark cart">
   <thead>
@@ -52,7 +52,7 @@
 
   </tbody>
 </table>
-  {{#if cart}}
+
   <form class="order-form m-auto" role="form" method="post" action="/order-success">
     <h1>Thông tin vận chuyển</h1>
     <div class="form-row">
@@ -114,7 +114,17 @@
       <div class="btn-order">
         <button class="btn btn-success m-auto w-100" data-toggle="modal" data-target="#verificationModal">Đặt hàng</button>
       </div>
-     {{/if}}
+
+  {{else}}
+  <div class="text-center m-5">
+      <img width="30%" src="/assets/cart-empty.webp" alt="empty-cart">
+      <h2> Giỏ hàng của bạn đang trống </h2>
+      <a href="/product" style="font-size: 25px; " class="btn btn-primary m-4"> Mua sắm ngay</a>
+  </div>
+  {{/if}}
+
+
+
 
 
 

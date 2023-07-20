@@ -16,8 +16,7 @@ router.get('/', (req, res) => {
     })
     .skip(0)
     .limit(5)
-    .lean()
-     
+    .lean() 
 })
 
 router.get('/product/sneaker', (req, res) => {
